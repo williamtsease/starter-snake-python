@@ -44,17 +44,26 @@ def move():
     Your response must include your move of up, down, left, or right.
     """
     data = bottle.request.json
-    print("MOVE:", json.dumps(data))
+    
+    boardInfo = (json.loads(data))
+    head = boardInfo["you"]["body"][0]
+    board = interpretBoard(boardInfo["board"], head["x"], head["y"])
+    moveOptions = []
+    if head["y"] > 0:
+        if board[head["x"]][head["y"]-1] < 100:
+            moveOptions.append("up")
+    if head["y"] < (boardInfo["board"]["height"]-1):
+        if board[head["x"]][head["y"]+1] < 100:
+            moveOptions.append("down")
+    if head["x"] > 0:
+        if board[head["x"]-1][head["y"]] < 100:
+            moveOptions.append("left")
+    if head["x"] < (boardInfo["board"]["width"]-1):
+        if board[head["x"]+1][head["y"]] < 100:
+            moveOptions.append("right")
+    
+    move = moveOptions[randint(0, len(moveOptions)-1)]
 
-    # Choose a random direction to move in
-    directions = {}
-    directions.append("left")
-    #directions = ["up", "down", "left", "right"]
-    #move = random.choice(directions)
-    move = directions[random.range(0, len(directions)]
-
-    # Shouts are messages sent to all the other snakes in the game.
-    # Shouts are not displayed on the game board.
     shout = "I am a python snake!"
 
     response = {"move": move, "shout": shout}
