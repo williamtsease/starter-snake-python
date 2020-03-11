@@ -47,9 +47,9 @@ def move():
   #  boardInfo = (json.loads(data))
     boardInfo = bottle.request.json
         
-    head = boardInfo['you']['body'][0]
+  #  head = boardInfo['you']['body'][0]
  #   board = interpretBoard(boardInfo['board'], head['x'], head['y'])
-    moveOptions = []
+ #   moveOptions = []
   #  if head['y'] > 0:
   #      if board[head['x']][head['y']-1] < 100:
  #           moveOptions.append("up")
@@ -63,7 +63,7 @@ def move():
   #      if board[head['x']+1][head['y']] < 100:
   #          moveOptions.append("right")
     
-    move = moveOptions[randint(0, len(moveOptions)-1)]
+  #  move = moveOptions[randint(0, len(moveOptions)-1)]
     move = "right"
     
     shout = "I am a python snake!"
