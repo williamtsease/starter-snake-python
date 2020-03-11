@@ -67,7 +67,7 @@ def move():
     
     move = "down"
     if len(moveOptions) > 0:
-        move = moveOptions[randint(0, 1)]   #randint(0, len(moveOptions)-1)
+        move = moveOptions[random.randint(0, 1)]   #randint(0, len(moveOptions)-1)
     
     shout = "I am a python snake at " + str(head['x']) + "," + str(head['y']) + " with " + str(len(moveOptions)) + " options "
     response = {"move": move, "shout": shout}
