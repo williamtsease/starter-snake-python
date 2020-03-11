@@ -45,7 +45,8 @@ def move():
     """
     data = bottle.request.json
     
-    boardInfo = (json.loads(data))
+    #boardInfo = (json.loads(data))
+    boardInfo = data
     head = boardInfo["you"]["body"][0]
     board = interpretBoard(boardInfo["board"], head["x"], head["y"])
     moveOptions = []
