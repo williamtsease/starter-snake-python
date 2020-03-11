@@ -51,6 +51,9 @@ def move():
     head = boardInfo['you']['body'][0]
     tempBoard = boardInfo['board']
     board = interpretBoard(tempBoard)
+    board[head['x']][head['y']] = 0 # (our space is "clear", since we need to check for adjacent snake heads but obviously don't care about our own)
+    
+    ## See which moves are possible (IE do not result in instant death)
     moveOptions = []
     if head['y'] > 0:
         if board[head['x']][head['y']-1] < 100:
@@ -85,6 +88,8 @@ def interpretBoard(boardInfo):
         snakeln = len(snake['body'])
         for segment in snake['body']:
             board[segment['x']][segment['y']] = 100 + snakeln
+            if snakeln == len(snake['body'])
+                board[segment['x']][segment['y']] += 100    # (it's a head! double it)
             snakeln -= 1
     return board
 
