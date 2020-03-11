@@ -88,7 +88,7 @@ def interpretBoard(boardInfo):
         snakeln = len(snake['body'])
         for segment in snake['body']:
             board[segment['x']][segment['y']] = 100 + snakeln
-            if snakeln == len(snake['body'])
+            if snakeln == len(snake['body']):
                 board[segment['x']][segment['y']] += 100    # (it's a head! double it)
             snakeln -= 1
     return board
