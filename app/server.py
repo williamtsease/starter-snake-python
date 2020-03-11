@@ -52,9 +52,9 @@ def move():
     tempBoard = boardInfo['board']
     board = interpretBoard(tempBoard)
     moveOptions = []
-    if head['y'] > 0:
-        if board[head['x']][head['y']-1] < 100:
-            moveOptions.append("up")
+  #  if head['y'] > 0:
+  #      if board[head['x']][head['y']-1] < 100:
+  #          moveOptions.append("up")
  #   if head['y'] < (boardInfo['board']['height']-1):
   #      if board[head['x']][head['y']+1] < 100:
   #          moveOptions.append("down")
@@ -68,7 +68,7 @@ def move():
   #  move = moveOptions[randint(0, len(moveOptions)-1)]
     move = "down"
     
-    shout = "I am a python snake at " + str(head['x']) + "," + str(head['y'] + " with options " + len(moveOptions))
+    shout = "I am a python snake at " + str(head['x']) + "," + str(head['y']
     response = {"move": move, "shout": shout}
     return HTTPResponse(
         status=200,
