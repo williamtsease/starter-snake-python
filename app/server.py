@@ -76,14 +76,14 @@ def move():
 
 def interpretBoard(boardInfo, headx, heady):
     board = [[-1 for i in range(boardInfo["height"])] for j in range(boardInfo["width"])] 
-    for food in boardInfo["food"]:
-        board[food["x"]][food["y"]] = 1
-    for snake in boardInfo["snakes"]:
-        snakeln = len(snake["body"])
-        for segment in snake["body"]:
-            board[segment["x"]][segment["y"]] = 100 + snakeln
-            snakeln -= 1
-    board[headx][heady] += 100
+ #   for food in boardInfo["food"]:
+ #       board[food["x"]][food["y"]] = 1
+ #   for snake in boardInfo["snakes"]:
+ #       snakeln = len(snake["body"])
+ #       for segment in snake["body"]:
+ #           board[segment["x"]][segment["y"]] = 100 + snakeln
+ #           snakeln -= 1
+ #   board[headx][heady] += 100
     return board
 
 @bottle.post("/end")
