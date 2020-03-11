@@ -58,12 +58,12 @@ def move():
     if head['y'] < (boardInfo['board']['height']-1):
         if board[head['x']][head['y']+1] < 100:
             moveOptions.append("down")
-  #  if head['x'] > 0:
-  #      if board[head['x']-1][head['y']] < 100:
-  #          moveOptions.append("left")
-  #  if head['x'] < (boardInfo['board']['width']-1):
-  #      if board[head['x']+1][head['y']] < 100:
-  #          moveOptions.append("right")
+    if head['x'] > 0:
+        if board[head['x']-1][head['y']] < 100:
+            moveOptions.append("left")
+    if head['x'] < (boardInfo['board']['width']-1):
+        if board[head['x']+1][head['y']] < 100:
+            moveOptions.append("right")
     
   #  move = moveOptions[randint(0, len(moveOptions)-1)]
     move = "down"
