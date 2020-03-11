@@ -78,8 +78,8 @@ def move():
 
 def interpretBoard(boardInfo):
     board = [[-1 for i in range(boardInfo['height'])] for j in range(boardInfo['width'])] 
- #   for food in boardInfo['food']:
- #       board[food['x']][food['y']] = 1
+    for food in boardInfo['food']:
+        board[food['x']][food['y']] = 1
  #   for snake in boardInfo['snakes']:
  #       snakeln = len(snake['body'])
  #       for segment in snake['body']:
