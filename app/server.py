@@ -65,7 +65,7 @@ def move():
   #      if board[head['x']+1][head['y']] < 100:
   #          moveOptions.append("right")
     
-    move = moveOptions[randint(0, len(moveOptions)-1)]
+  #  move = moveOptions[randint(0, len(moveOptions)-1)]
     move = "down"
     
     shout = "I am a python snake at " + str(head['x']) + "," + str(head['y'])
