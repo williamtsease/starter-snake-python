@@ -43,8 +43,8 @@ def move():
     The data parameter will contain information about the board.
     Your response must include your move of up, down, left, or right.
     """
-    data = bottle.request.json
-  #  boardInfo = bottle.request.json
+  #  data = bottle.request.json
+    boardInfo = bottle.request.json
         
     #boardInfo = (json.loads(data))
     head = boardInfo['you']['body'][0]
