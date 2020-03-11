@@ -52,9 +52,9 @@ def move():
     tempBoard = boardInfo['board']
     board = interpretBoard(tempBoard)
     moveOptions = []
-  #  if head['y'] > 0:
-  #      if board[head['x']][head['y']-1] < 100:
- #           moveOptions.append("up")
+    if head['y'] > 0:
+        if board[head['x']][head['y']-1] < 100:
+            moveOptions.append("up")
  #   if head['y'] < (boardInfo['board']['height']-1):
   #      if board[head['x']][head['y']+1] < 100:
   #          moveOptions.append("down")
