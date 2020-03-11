@@ -87,7 +87,7 @@ def interpretBoard(boardInfo):
     for snake in boardInfo['snakes']:
         snakeln = len(snake['body'])
         for segment in snake['body']:
-            board[segment['x']][segment['y']] = 100 + snakeln
+            board[segment['x']][segment['y']] = 99 + snakeln    # It's 99+snakeln because I want the very tail end to be clear in ZERO turns; IE you can actually move into that square now
             if snakeln == len(snake['body']):
                 board[segment['x']][segment['y']] += 100    # (it's a head! double it)
             snakeln -= 1
