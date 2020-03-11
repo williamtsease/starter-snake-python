@@ -51,7 +51,7 @@ def move():
     head = boardInfo['you']['body'][0]
     tempBoard = boardInfo['board']
     board = interpretBoard(tempBoard)
- #   moveOptions = []
+    moveOptions = []
   #  if head['y'] > 0:
   #      if board[head['x']][head['y']-1] < 100:
  #           moveOptions.append("up")
@@ -65,7 +65,7 @@ def move():
   #      if board[head['x']+1][head['y']] < 100:
   #          moveOptions.append("right")
     
-  #  move = moveOptions[randint(0, len(moveOptions)-1)]
+    move = moveOptions[randint(0, len(moveOptions)-1)]
     move = "down"
     
     shout = "I am a python snake at " + str(head['x']) + "," + str(head['y'])
