@@ -48,9 +48,7 @@ def move():
     boardInfo = bottle.request.json
         
     head = boardInfo['you']['body'][0]
-    boardInfo = boardInfo['board']
-    board = [[-1 for i in range(boardInfo['height'])] for j in range(boardInfo['width'])] 
- #   board = interpretBoard(boardInfo['board'], head['x'], head['y'])
+    board = interpretBoard(boardInfo['board'])
  #   moveOptions = []
   #  if head['y'] > 0:
   #      if board[head['x']][head['y']-1] < 100:
@@ -76,7 +74,7 @@ def move():
         body=json.dumps(response),
     )
 
-def interpretBoard(boardInfo, headx, heady):
+def interpretBoard(boardInfo):
     board = [[-1 for i in range(boardInfo['height'])] for j in range(boardInfo['width'])] 
  #   for food in boardInfo['food']:
  #       board[food['x']][food['y']] = 1
