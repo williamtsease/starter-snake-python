@@ -68,7 +68,7 @@ def move():
   #  move = moveOptions[randint(0, len(moveOptions)-1)]
     move = "down"
     
-    shout = "I am a python snake at " + str(head['x']) + "," + str(head['y'])
+    shout = "I am a python snake at " + str(head['x']) + "," + str(head['y'] + " with options " + str(moveOptions))
     response = {"move": move, "shout": shout}
     return HTTPResponse(
         status=200,
