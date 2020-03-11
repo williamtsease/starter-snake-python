@@ -44,24 +44,24 @@ def move():
     Your response must include your move of up, down, left, or right.
     """
     data = bottle.request.json
-    
-    #boardInfo = (json.loads(data))
-    boardInfo = data
-    head = boardInfo["you"]["body"][0]
-    board = interpretBoard(boardInfo["board"], head["x"], head["y"])
+    boardInfo = bottle.request.json
+        
+    #boardInfo = (json.loads(json.dumps(data)))
+    head = boardInfo['you']['body'][0]
+    board = interpretBoard(boardInfo['board'], head['x'], head['y'])
     moveOptions = []
-    if head["y"] > 0:
-        if board[head["x"]][head["y"]-1] < 100:
-            moveOptions.append("up")
-    if head["y"] < (boardInfo["board"]["height"]-1):
-        if board[head["x"]][head["y"]+1] < 100:
-            moveOptions.append("down")
-    if head["x"] > 0:
-        if board[head["x"]-1][head["y"]] < 100:
-            moveOptions.append("left")
-    if head["x"] < (boardInfo["board"]["width"]-1):
-        if board[head["x"]+1][head["y"]] < 100:
-            moveOptions.append("right")
+    if head['y'] > 0:
+        if board[head['x']][head['y']-1] < 100:
+            moveOptions.append('up')
+    if head['y'] < (boardInfo['board']['height']-1):
+        if board[head['x']][head['y']+1] < 100:
+            moveOptions.append('down')
+    if head['x'] > 0:
+        if board[head['x']-1][head['y']] < 100:
+            moveOptions.append('left')
+    if head['x'] < (boardInfo['board']['width']-1):
+        if board[head['x']+1][head['y']] < 100:
+            moveOptions.append('right')
     
     move = moveOptions[randint(0, len(moveOptions)-1)]
 
