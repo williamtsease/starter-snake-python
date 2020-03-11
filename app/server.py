@@ -48,7 +48,7 @@ def move():
     boardInfo = bottle.request.json
         
     head = boardInfo['you']['body'][0]
-    board = interpretBoard(boardInfo['board'], head['x'], head['y'])
+  #  board = interpretBoard(boardInfo['board'], head['x'], head['y'])
     moveOptions = []
   #  if head['y'] > 0:
    #     if board[head['x']][head['y']-1] < 100:
@@ -63,7 +63,7 @@ def move():
    #     if board[head['x']+1][head['y']] < 100:
    #         moveOptions.append("right")
     
-    move = moveOptions[randint(0, len(moveOptions)-1)]
+ #   move = moveOptions[randint(0, len(moveOptions)-1)]
     move = "left"
     
     shout = "I am a python snake!"
@@ -75,7 +75,7 @@ def move():
     )
 
 def interpretBoard(boardInfo, headx, heady):
-    board = [[-1 for i in range(boardInfo["height"])] for j in range(boardInfo["width"])] 
+    board = [[-1 for i in range(boardInfo['height'])] for j in range(boardInfo['width'])] 
  #   for food in boardInfo["food"]:
  #       board[food["x"]][food["y"]] = 1
  #   for snake in boardInfo["snakes"]:
