@@ -55,20 +55,27 @@ def move():
     
     ## See which moves are possible (IE do not result in instant death)
     moveOptions = []
+    moveWeights = []
     if head['y'] > 0:
         if board[head['x']][head['y']-1] < 100:
             moveOptions.append("up")
+            moveWeights.append(0)
     if head['y'] < (boardInfo['board']['height']-1):
         if board[head['x']][head['y']+1] < 100:
             moveOptions.append("down")
+            moveWeights.append(0)
     if head['x'] > 0:
         if board[head['x']-1][head['y']] < 100:
             moveOptions.append("left")
+            moveWeights.append(0)
     if head['x'] < (boardInfo['board']['width']-1):
         if board[head['x']+1][head['y']] < 100:
             moveOptions.append("right")
+            moveWeights.append(0)
     
-    move = "down"
+    move = "down"   # Default move
+    
+    
     if len(moveOptions) > 0:
         move = moveOptions[random.randint(0, len(moveOptions)-1)]
     
